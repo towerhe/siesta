@@ -7,14 +7,13 @@ require "siesta/version"
 Gem::Specification.new do |s|
   s.name        = "siesta"
   s.version     = Siesta::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Siesta."
-  s.description = "TODO: Description of Siesta."
+  s.authors     = ["Tower He"]
+  s.email       = ["towerhe@gmail.com"]
+  s.homepage    = "https://github.com/towerhe/siesta"
+  s.summary     = "A rails mountable engine setting up siesta for testing ExtJS"
+  s.description = "A rails mountable engine setting up siesta for testing ExtJS"
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib,vendor}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency "rails", "~> 3.2.6"
-  # s.add_dependency "jquery-rails"
 end
