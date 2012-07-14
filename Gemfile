@@ -1,4 +1,4 @@
-source "http://rubygems.org"
+source "http://ruby.taobao.org"
 
 # Declare your gem's dependencies in siesta.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
