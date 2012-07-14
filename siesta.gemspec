@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.summary     = "A rails mountable engine setting up siesta for testing ExtJS"
   s.description = "A rails mountable engine setting up siesta for testing ExtJS"
 
-  s.files = Dir["{app,config,db,lib,vendor}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
+  s.files = Dir["{app,config,db,lib,vendor}/**/*"] + ["LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency "rails", "~> 3.2.6"
 end
