@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
 
-  mount Siesta::Engine => "/siesta"
+  mount Siesta::Engine => "/"
 end
