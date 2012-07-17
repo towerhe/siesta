@@ -24,7 +24,16 @@ if Rails.env.development?
 end
 ```
 
-2. Create tests under `spec/javascripts` or `test/javascripts`.
+2. Default directory of specs is `spec/javascripts`, so you should
+   create you specs under `spec/javascripts` by default. But you could change the default value through an initializer.
+
+```ruby
+Siesta.configure do |config|
+  config.spec_dir = 'test/javascripts'
+end
+```
+
+3. Create your specs under the directory of specs.
 
 ```javascript
 // spec/javascripts/sample.t.js
@@ -33,7 +42,7 @@ StartTest(function(t) {
 })    
 ```
 
-3. Create `spec/javascripts/test_harness.js` to start.
+4. Create `spec/javascripts/test_harness.js` to start.
 
 ```javascript
 // spec/javascript/test_harness.js
@@ -45,7 +54,7 @@ Harness.start({
 });
 ```
 
-4. Start up the application, and then run your tests through
+5. Start up the application, and then run your tests through
    [http://localhost:3000/siesta](http://localhost:3000/siesta).
 
 ```bash
