@@ -1,5 +1,12 @@
 ## Siesta
 
+[![Build
+Status](https://secure.travis-ci.org/towerhe/siesta.png)](http://travis-ci.org/towerhe/siesta)
+[![Dependency
+Status](https://gemnasium.com/towerhe/siesta.png)](https://gemnasium.com/towerhe/siesta)
+[![Code
+Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/towerhe/siesta)
+
 A rails mountable engine setting up
 [siesta](http://www.bryntum.com/products/siesta/) for testing ExtJS.
 
