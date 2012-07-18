@@ -35,6 +35,7 @@ end
    create you specs under `spec/javascripts` by default. But you could change the default value through an initializer.
 
 ```ruby
+# config/initializers/siesta.rb
 Siesta.configure do |config|
   config.spec_dir = 'test/javascripts'
 end
