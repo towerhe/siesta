@@ -22,7 +22,7 @@ And then run `bundle install` to install siesta. That's all.
 
 ### Usage
 
-1. Mount the engine in your rails application.
+* Mount the engine in your rails application.
 
 ```ruby
 # config/routes
@@ -31,7 +31,7 @@ if Rails.env.development?
 end
 ```
 
-2. Default directory of specs is `spec/javascripts`, so you should
+* (OPTIONAL) Default directory of specs is `spec/javascripts`, so you should
    create you specs under `spec/javascripts` by default. But you could change the default value through an initializer.
 
 ```ruby
@@ -41,7 +41,7 @@ Siesta.configure do |config|
 end
 ```
 
-3. Create your specs under the directory of specs.
+* Create your specs under the directory of specs.
 
 ```javascript
 // spec/javascripts/sample.t.js
@@ -50,7 +50,7 @@ StartTest(function(t) {
 })    
 ```
 
-4. Create `spec/javascripts/test_harness.js` to start.
+* Create `spec/javascripts/test_harness.js` to start.
 
 ```javascript
 // spec/javascript/test_harness.js
@@ -62,11 +62,26 @@ Harness.start({
 });
 ```
 
-5. Start up the application, and then run your tests through
+* Start up the application, and then run your tests through
    [http://localhost:3000/siesta](http://localhost:3000/siesta).
 
 ```bash
 rails s
+```
+
+* (OPTIONAL) Customize the behavior of siesta. See the [Siesta.Harness.Browser.ExtJS](http://www.bryntum.com/products/siesta/docs/#!/api/Siesta.Harness.Browser.ExtJS) for a detailed description of all available options.
+
+```javascript
+// spec/javascripts/siesta_config.js
+Siesta.Harness.Browser.ExtJS.configure({
+  title: 'Dummy App',
+  loaderPath: { 'DummyApp' : '/assets/extjs/app' },
+
+  preload : [
+    "/assets/extjs/resources/css/ext-all.css",
+    "/assets/extjs/ext-all-debug.js"
+  ]
+});
 ```
 
 For more detail about how to test your ExtJS, please visit:
