@@ -7,7 +7,7 @@ module Siesta
         raise RuntimeError, "siesta requires the asset pipeline to be enabled"
       end
 
-      app.config.assets.paths << app.root.join(Siesta.config.spec_dir || 'spec/javascripts').to_s
+      app.config.assets.paths << app.root.join(Siesta.config.spec_dir).to_s
     end
   end
 end
