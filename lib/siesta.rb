@@ -1,4 +1,8 @@
-require "siesta/engine"
+require 'rails'
+require 'virtus'
+
+require 'siesta/engine'
+require 'siesta/test_suite'
 
 module Siesta
   class << self
@@ -10,4 +14,9 @@ module Siesta
       yield config
     end
   end
+end
+
+Siesta.configure do |config|
+  config.spec_dir = 'spec/javascripts'
+  config.auto_organizing = true
 end

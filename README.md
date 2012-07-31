@@ -31,15 +31,37 @@ if Rails.env.development?
 end
 ```
 
-* (OPTIONAL) Default directory of specs is `spec/javascripts`, so you should
-   create you specs under `spec/javascripts` by default. But you could change the default value through an initializer.
+* (OPTIONAL) Configure siesta.
+  * spec_dir - Default directory of specs is `spec/javascripts`, so you should create you specs under `spec/javascripts` by default. But you could change the default value through an initializer.
 
-```ruby
-# config/initializers/siesta.rb
-Siesta.configure do |config|
-  config.spec_dir = 'test/javascripts'
-end
-```
+    ```ruby
+    # config/initializers/siesta.rb
+    Siesta.configure do |config|
+      config.spec_dir = 'test/javascripts'
+    end
+    ```
+
+  * auto_organizing - Organizing the tests by folders, default is true.
+
+    ```ruby
+    # config/initializers/siesta.rb
+    Siesta.configure do |config|
+      config.auto_organizing = false
+    end
+    ```
+    If you do not enable auto_organizing function, you need to create a
+`test_harness.js` under `spec_dir` to organize your tests.
+
+    ```javascript
+    var Harness = Siesta.Harness.Browser.ExtJS;
+
+    Harness.start({
+      group               : 'Sample',
+      items               : [
+        '/assets/sample.t.js'
+      ]
+    });
+    ```
 
 * Create your specs under the directory of specs.
 
