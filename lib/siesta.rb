@@ -11,10 +11,12 @@ module Siesta
     end
 
     def configure
-      config.spec_dir = 'spec/javascripts'
-      config.auto_organizing = true
-
       yield config
     end
   end
+end
+
+Siesta.configure do |config|
+  config.spec_dir = 'spec/javascripts'
+  config.auto_organizing = true
 end
