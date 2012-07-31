@@ -9,10 +9,10 @@ module Siesta
     end
 
     def include_test_harness
-      if asset_exists?('test_harness.js')
-        javascript_include_tag 'test_harness'
-      else
+      if Siesta.config.auto_organizing
         content_tag(:script, test_harness, { type: 'text/javascript' }, false)
+      else
+        javascript_include_tag 'test_harness'
       end
     end
 
