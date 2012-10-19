@@ -14,7 +14,7 @@ module Siesta
 
       def items
         @items ||= Dir.glob(File.join(path, '*.t.js')).inject([]) do |c, f|
-          c << Item.new(path: f, group: self, suite: suite) unless File.directory?(f)
+          c << Item.new(:path => f, :group => self, :suite => suite) unless File.directory?(f)
           
           c
         end        
@@ -41,12 +41,12 @@ module Siesta
 
     def groups
       @groups ||= Dir.glob(File.join(path, '**', '*')).inject([]) do |c, f|
-        c << Group.new(path: f, suite: self) if File.directory?(f)
+        c << Group.new(:path => f, :suite => self) if File.directory?(f)
 
         c
       end
 
-      @groups << Group.new(path: path, suite: self)
+      @groups << Group.new(:path => path, :suite => self)
     end
   end
 end
