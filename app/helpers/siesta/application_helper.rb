@@ -10,7 +10,7 @@ module Siesta
 
     def include_test_harness
       if Siesta.config.auto_organizing
-        content_tag(:script, test_harness, { type: 'text/javascript' }, false)
+        content_tag(:script, test_harness, { :type => 'text/javascript' }, false)
       else
         javascript_include_tag 'test_harness'
       end
@@ -25,7 +25,7 @@ module Siesta
       @suite ||= TestSuite.new(File.join(Rails.root, Siesta.config.spec_dir))
 
       groups = @suite.groups.inject([]) do |c, g|
-        c << { group: g.name, items: g.items.map(&:url) }
+        c << { :group => g.name, :items => g.items.map(&:url) }
       end
 
       <<-SCRIPTS
