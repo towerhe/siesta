@@ -53,7 +53,7 @@ module Siesta
     end
 
     def has_tests?(path)
-      File.directory?(f) && !Dir[File.join(f, '*.t.js')].empty?
+      File.directory?(path) && !Dir[File.join(path, '*.t.js')].empty?
     end
   end
 end
