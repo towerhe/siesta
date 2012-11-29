@@ -40,13 +40,20 @@ module Siesta
     end
 
     def groups
-      @groups ||= Dir.glob(File.join(path, '**', '*')).inject([]) do |c, f|
-        c << Group.new(:path => f, :suite => self) if File.directory?(f)
+      return @groups if @groups
+
+      @groups = Dir.glob(File.join(path, '**', '*')).inject([]) do |c, f|
+        c << Group.new(:path => f, :suite => self) if has_tests?(f)
 
         c
       end
+      @groups << Group.new(:path => path, :suite => self) if has_tests?(path)
 
-      @groups << Group.new(:path => path, :suite => self)
+      @groups
+    end
+
+    def has_tests?(path)
+      File.directory?(f) && !Dir[File.join(f, '*.t.js')].empty?
     end
   end
 end
